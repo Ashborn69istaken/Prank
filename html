@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badli Padli 💩</title>
+    <style>
+        body {
+            background-color: #ffcccb;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://em-content.zobj.net/source/apple/354/pile-of-poo_1f4a9.png');
+            background-size: 100px;
+            background-repeat: repeat;
+            transition: transform 0.1s ease-in-out;
+        }
+        h1 {
+            font-size: 50px;
+            color: brown;
+            text-shadow: 2px 2px yellow;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #c70039;
+        }
+        /* Fart Animation */
+        .fart {
+            font-size: 50px;
+            position: absolute;
+            bottom: 100px;
+            opacity: 1;
+            animation: farting 1.5s ease-out forwards;
+        }
+        @keyframes farting {
+            0% { transform: translateX(0) translateY(0); opacity: 1; }
+            100% { transform: translateX(-50px) translateY(-80px); opacity: 0; }
+        }
+        /* Shake effect */
+        @keyframes shake {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-5px, 5px); }
+            50% { transform: translate(5px, -5px); }
+            75% { transform: translate(-5px, 5px); }
+        }
+    </style>
+</head>
+<body onload="triggerMadness()">
+
+    <h1>Badli Padli 💩</h1>
+    <script>
+        function triggerMadness() {
+            // Show alert when page opens
+            alert("Tur Tur");
+
+            // Start screen shake
+            document.body.style.animation = "shake 0.5s infinite";
+
+            // Create fart emoji animation
+            let fart = document.createElement("div");
+            fart.innerHTML = "💨";
+            fart.classList.add("fart");
+            document.body.appendChild(fart);
+
+            // Randomize fart position near center
+            fart.style.left = (window.innerWidth / 2 + Math.random() * 50 - 25) + "px";
+
+            // Remove fart after animation ends
+            setTimeout(() => {
+                fart.remove();
+                document.body.style.animation = "";
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
