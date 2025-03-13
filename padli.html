@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padli Game</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            overflow: hidden;
+            background: black;
+            text-align: center;
+            transition: transform 0.1s ease-in-out;
+        }
+
+        /* Background full of 💩 */
+        body::before {
+            content: "💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩";
+            font-size: 50px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            opacity: 0.5;
+        }
+
+        #text {
+            z-index: 1;
+            color: white;
+        }
+
+        .btn {
+            background: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: gray;
+        }
+
+        #fart {
+            display: none;
+            font-size: 100px;
+            position: absolute;
+        }
+
+        .shake {
+            animation: shake 0.1s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(3px, 3px); }
+            25% { transform: translate(-3px, -3px); }
+            50% { transform: translate(3px, -3px); }
+            75% { transform: translate(-3px, 3px); }
+            100% { transform: translate(3px, 3px); }
+        }
+
+        .angry {
+            font-size: 50px;
+            color: red;
+        }
+    </style>
+</head>
+<body class="shake">
+    <div id="text">aadli padli kon padli</div>
+    <button class="btn" onclick="padli()">mi padli 🥵</button>
+    <button class="btn" onclick="nayPadli()">mi nay padli 🥺</button>
+
+    <div id="fart">💨</div>
+
+    <script>
+        function padli() {
+            document.getElementById("fart").style.display = "block";
+            document.getElementById("fart").classList.add("shake");
+        }
+
+        function nayPadli() {
+            document.body.innerHTML = '<div class="angry">TUS PADLI 😡🤬🔥</div>';
+        }
+    </script>
+</body>
+</html>
